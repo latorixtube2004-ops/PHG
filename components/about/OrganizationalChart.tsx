@@ -287,14 +287,14 @@ export function OrganizationalChart() {
 
       {/* Selected Division Detailed Dossier Card */}
       <AnimatedReveal direction="up" delay={200}>
-        <Card className="p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-900 to-sky-950 text-white border border-white/20 shadow-2xl relative overflow-hidden">
+        <div className="p-6 sm:p-8 rounded-3xl bg-slate-950 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 text-white border border-white/20 shadow-2xl relative overflow-hidden">
           {/* Ambient fluid glow */}
           <div className="absolute top-0 end-0 w-80 h-80 bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10">
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-white/15">
               <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-xl bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-sky-300">
+                <div className="w-12 h-12 rounded-xl bg-sky-500/25 border border-sky-400/40 flex items-center justify-center text-sky-300 shadow-md">
                   {React.createElement(activeDiv.icon, { size: 24 })}
                 </div>
                 <div>
@@ -325,7 +325,7 @@ export function OrganizationalChart() {
                     {activeDiv.subteams.map((sub, i) => (
                       <div
                         key={i}
-                        className="p-4 rounded-xl liquid-glass-dark border border-white/15 bg-white/5"
+                        className="p-4 rounded-xl border border-white/15 bg-white/10 backdrop-blur-md shadow-md"
                       >
                         <div className="font-extrabold text-white text-sm mb-1">
                           {isArabic ? sub.nameAr : sub.nameEn}
@@ -345,7 +345,7 @@ export function OrganizationalChart() {
                     <ShieldCheck size={14} />
                     <span>{isArabic ? 'نطاق الإشراف المباشر' : 'Direct Supervisory Scope'}</span>
                   </h4>
-                  <div className="p-4 rounded-xl liquid-glass-dark border border-white/15 bg-white/5 text-xs text-slate-300 leading-relaxed">
+                  <div className="p-4 rounded-xl border border-white/15 bg-white/10 backdrop-blur-md text-xs text-slate-300 leading-relaxed shadow-md">
                     {isArabic
                       ? 'تعمل هذه الإدارة بصلاحيات استراتيجية مباشرة تحت إشراف المدير العام لتنسيق المتطلبات الفنية والتعاقدية.'
                       : 'Operates with strategic authority reporting directly to the General Manager to execute core commercial, engineering, or statutory frameworks.'}
@@ -363,7 +363,7 @@ export function OrganizationalChart() {
                   {activeDiv.responsibilities?.map((resp, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-2.5 text-xs text-slate-200 leading-relaxed p-2.5 rounded-lg bg-white/5"
+                      className="flex items-start gap-2.5 text-xs text-slate-200 leading-relaxed p-2.5 rounded-lg bg-white/10 border border-white/10 shadow-xs"
                     >
                       <CheckCircle2 size={15} className="text-emerald-400 flex-shrink-0 mt-0.5" />
                       <span>{isArabic ? resp.ar : resp.en}</span>
@@ -373,7 +373,7 @@ export function OrganizationalChart() {
               </div>
             </div>
           </div>
-        </Card>
+        </div>
       </AnimatedReveal>
     </div>
   );
